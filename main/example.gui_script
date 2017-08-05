@@ -1,0 +1,28 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	print("diags.ERROR: " .. tostring(diags.ERROR))
+	print("diags.OKAY: " .. tostring(diags.OKAY))
+	print("diags.CANCEL: " .. tostring(diags.CANCEL))
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.released then
+		
+		local hit_open = gui.pick_node(gui.get_node("open"), action.x, action.y)
+		local hit_save = gui.pick_node(gui.get_node("save"), action.x, action.y)
+		local hit_open_multiple = gui.pick_node(gui.get_node("open_multiple"), action.x, action.y)
+		local hit_open_folder = gui.pick_node(gui.get_node("open_folder"), action.x, action.y)
+		if hit_open then
+			print("diags.open:", diags.open())
+		elseif hit_save then
+			print("diags.save:", diags.save())
+		elseif hit_open_multiple then
+			local r, t = diags.open_multiple()
+			print("diags.open_multiple:", r)
+			pprint(t)
+		elseif hit_open_folder then
+			print("diags.open_folder:", diags.open_folder())
+		end
+
+	end
+end

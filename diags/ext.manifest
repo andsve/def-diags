@@ -1,0 +1,10 @@
+name: "diags"
+
+platforms:
+    x86-osx:
+        context:
+            frameworks: ["AppKit"]
+    x86_64-osx:
+        context:
+            frameworks: ["AppKit"]
+

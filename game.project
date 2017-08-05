@@ -1,0 +1,24 @@
+[project]
+title = DefoldNativeDialogs
+version = 0.1
+branch = unknown
+commit = unknown
+build = unknown
+
+[bootstrap]
+main_collection = /main/main.collectionc
+
+[display]
+width = 640
+height = 480
+high_dpi = 0
+
+[physics]
+scale = 0.02
+
+[script]
+shared_state = 1
+
+[library]
+include_dirs = diags
+

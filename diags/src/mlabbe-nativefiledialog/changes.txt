@@ -1,0 +1,5 @@
+Original source is: https://github.com/mlabbe/nativefiledialog
+
+With some modifications:
+* Added platform define guards since Defold Native Extensions currently compiles everything in the src directory.
+* Moved nfd.h into src root for easier include.
