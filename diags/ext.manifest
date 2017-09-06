@@ -7,4 +7,9 @@ platforms:
     x86_64-osx:
         context:
             frameworks: ["AppKit"]
-
+    x86_64-win32:
+        context:
+            libs: ['Ole32.Lib']
+    x86-win32:
+        context:
+            libs: ['Ole32.Lib']
