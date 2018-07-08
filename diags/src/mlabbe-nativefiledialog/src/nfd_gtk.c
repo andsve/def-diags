@@ -1,4 +1,4 @@
-#if !defined(_WIN32) && !defined(__APPLE__)
+#ifdef __linux__
 /*
   Native File Dialog
 
@@ -379,4 +379,4 @@ nfdresult_t NFD_PickFolder(const nfdchar_t *defaultPath,
     return result;
 }
 
-#endif // !defined(_WIN32) && !defined(__APPLE__)
+#endif // #ifdef __linux__
