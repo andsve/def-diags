@@ -191,7 +191,7 @@ static dmExtension::Result FinalizeDiags(dmExtension::Params* params)
     return dmExtension::RESULT_OK;
 }
 
-DM_DECLARE_EXTENSION(EXTENSION_NAME, LIB_NAME, AppInitializeVibrate, AppFinalizeVibrate, InitializeVibrate, 0, 0, FinalizeVibrate)
+DM_DECLARE_EXTENSION(diags, LIB_NAME, AppInitializeDiags, AppFinalizeDiags, InitializeDiags, UpdateDiags, 0, FinalizeDiags)
 
 #else
 
