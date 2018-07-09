@@ -5,6 +5,8 @@
 // include the Defold SDK
 #include <dmsdk/sdk.h>
 
+#if defined(DM_PLATFORM_WINDOWS) || defined(DM_PLATFORM_OSX) || defined(DM_PLATFORM_LINUX)
+
 #include "mlabbe-nativefiledialog/src/nfd.h"
 
 static int Diags_Open(lua_State* L)
@@ -190,3 +192,31 @@ static dmExtension::Result FinalizeDiags(dmExtension::Params* params)
 }
 
 DM_DECLARE_EXTENSION(diags, LIB_NAME, AppInitializeDiags, AppFinalizeDiags, InitializeDiags, UpdateDiags, 0, FinalizeDiags)
+
+#else
+
+static dmExtension::Result AppInitializeExtension(dmExtension::AppParams* params)
+{
+    dmLogWarning("Registered %s (null) Extension\n", MODULE_NAME);
+    return dmExtension::RESULT_OK;
+}
+
+static dmExtension::Result InitializeExtension(dmExtension::Params* params)
+{
+    return dmExtension::RESULT_OK;
+}
+
+static dmExtension::Result AppFinalizeExtension(dmExtension::AppParams* params)
+{
+    return dmExtension::RESULT_OK;
+}
+
+static dmExtension::Result FinalizeExtension(dmExtension::Params* params)
+{
+    return dmExtension::RESULT_OK;
+}
+
+DM_DECLARE_EXTENSION(EXTENSION_NAME, LIB_NAME, AppInitializeExtension, AppFinalizeExtension, InitializeExtension, 0, 0, FinalizeExtension)
+
+#endif
+

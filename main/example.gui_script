@@ -1,12 +1,14 @@
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	print("diags.ERROR: " .. tostring(diags.ERROR))
-	print("diags.OKAY: " .. tostring(diags.OKAY))
-	print("diags.CANCEL: " .. tostring(diags.CANCEL))
+	if diags then
+		print("diags.ERROR: " .. tostring(diags.ERROR))
+		print("diags.OKAY: " .. tostring(diags.OKAY))
+		print("diags.CANCEL: " .. tostring(diags.CANCEL))
+	end
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("touch") and action.released then
+	if action_id == hash("touch") and action.released and diags then
 		
 		local hit_open = gui.pick_node(gui.get_node("open"), action.x, action.y)
 		local hit_save = gui.pick_node(gui.get_node("save"), action.x, action.y)
