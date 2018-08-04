@@ -1,3 +1,4 @@
+#if defined(DM_PLATFORM_LINUX)
 #ifdef __linux__
 /*
   Native File Dialog
@@ -380,3 +381,4 @@ nfdresult_t NFD_PickFolder(const nfdchar_t *defaultPath,
 }
 
 #endif // #ifdef __linux__
+#endif 
