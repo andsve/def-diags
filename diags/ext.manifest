@@ -10,6 +10,8 @@ platforms:
     x86_64-win32:
         context:
             libs: ['Ole32.Lib']
+            use-clang: true
     x86-win32:
         context:
             libs: ['Ole32.Lib']
+            use-clang: true
