@@ -9,9 +9,9 @@ platforms:
             frameworks: ["AppKit"]
     x86_64-win32:
         context:
-            libs: ['Ole32.Lib']
+            libs: ['Ole32']
             use-clang: true
     x86-win32:
         context:
-            libs: ['Ole32.Lib']
+            libs: ['Ole32']
             use-clang: true
