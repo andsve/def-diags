@@ -5,7 +5,8 @@
 // include the Defold SDK
 #include <dmsdk/sdk.h>
 
-#if defined(DM_PLATFORM_WINDOWS) || defined(DM_PLATFORM_OSX) || defined(DM_PLATFORM_LINUX)
+// DM_PLATFORM_LINUX does not work currently due to dependency on gtk.h
+#if defined(DM_PLATFORM_WINDOWS) || defined(DM_PLATFORM_OSX)
 
 #include "mlabbe-nativefiledialog/src/nfd.h"
 
@@ -219,4 +220,3 @@ static dmExtension::Result FinalizeExtension(dmExtension::Params* params)
 DM_DECLARE_EXTENSION(diags, LIB_NAME, AppInitializeExtension, AppFinalizeExtension, InitializeExtension, 0, 0, FinalizeExtension)
 
 #endif
-

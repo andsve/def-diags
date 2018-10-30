@@ -1,4 +1,4 @@
-#ifdef _WIN32
+#ifdef DM_PLATFORM_WINDOWS
 
 /*
   Native File Dialog
@@ -754,4 +754,4 @@ nfdresult_t NFD_PickFolder(const nfdchar_t *defaultPath,
     return NFD_OKAY;
 }
 
-#endif // _WIN32
+#endif // DM_PLATFORM_WIN32

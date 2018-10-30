@@ -1,5 +1,5 @@
-#if defined(DM_PLATFORM_LINUX)
-#ifdef __linux__
+// DM_PLATFORM_LINUX does not work currently due to dependency on gtk.h
+#if 0
 /*
   Native File Dialog
 
@@ -380,5 +380,4 @@ nfdresult_t NFD_PickFolder(const nfdchar_t *defaultPath,
     return result;
 }
 
-#endif // #ifdef __linux__
-#endif 
+#endif
