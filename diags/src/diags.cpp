@@ -4,9 +4,9 @@
 
 // include the Defold SDK
 #include <dmsdk/sdk.h>
+#include <cstdlib>
 
-// DM_PLATFORM_LINUX does not work currently due to dependency on gtk.h
-#if defined(DM_PLATFORM_WINDOWS) || defined(DM_PLATFORM_OSX)
+#if defined(DM_PLATFORM_WINDOWS) || defined(DM_PLATFORM_OSX) || defined(DM_PLATFORM_LINUX)
 
 #include "mlabbe-nativefiledialog/src/nfd.h"
 
