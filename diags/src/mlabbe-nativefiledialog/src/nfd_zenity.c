@@ -1,3 +1,5 @@
+#if defined(DM_PLATFORM_LINUX)
+
 /*
   Native File Dialog
 
@@ -305,3 +307,5 @@ nfdresult_t NFD_PickFolder(const nfdchar_t *defaultPath,
 
     return result;
 }
+
+#endif
