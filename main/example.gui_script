@@ -4,6 +4,8 @@ function init(self)
 		print("diags.ERROR: " .. tostring(diags.ERROR))
 		print("diags.OKAY: " .. tostring(diags.OKAY))
 		print("diags.CANCEL: " .. tostring(diags.CANCEL))
+	else
+		print("diags is nil")
 	end
 end
 
